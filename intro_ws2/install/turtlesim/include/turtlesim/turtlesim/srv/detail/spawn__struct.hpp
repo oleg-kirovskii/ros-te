@@ -1,1 +1,0 @@
-/mnt/c/projects/ros-te/ros-te/intro_ws2/build/turtlesim/rosidl_generator_cpp/turtlesim/srv/detail/spawn__struct.hpp

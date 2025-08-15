@@ -1,1 +1,0 @@
-/mnt/c/projects/ros-te/ros-te/intro_ws2/build/turtlesim/rosidl_generator_py/turtlesim/action/__init__.py

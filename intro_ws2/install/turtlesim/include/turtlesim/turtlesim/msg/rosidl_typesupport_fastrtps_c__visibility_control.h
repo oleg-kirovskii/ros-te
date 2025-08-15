@@ -1,1 +1,0 @@
-/mnt/c/projects/ros-te/ros-te/intro_ws2/build/turtlesim/rosidl_typesupport_fastrtps_c/turtlesim/msg/rosidl_typesupport_fastrtps_c__visibility_control.h

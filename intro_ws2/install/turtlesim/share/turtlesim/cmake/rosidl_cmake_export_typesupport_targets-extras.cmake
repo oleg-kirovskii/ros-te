@@ -1,1 +1,0 @@
-/mnt/c/projects/ros-te/ros-te/intro_ws2/build/turtlesim/rosidl_cmake/rosidl_cmake_export_typesupport_targets-extras.cmake

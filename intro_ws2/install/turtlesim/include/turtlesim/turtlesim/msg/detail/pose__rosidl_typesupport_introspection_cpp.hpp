@@ -1,1 +1,0 @@
-/mnt/c/projects/ros-te/ros-te/intro_ws2/build/turtlesim/rosidl_typesupport_introspection_cpp/turtlesim/msg/detail/pose__rosidl_typesupport_introspection_cpp.hpp
