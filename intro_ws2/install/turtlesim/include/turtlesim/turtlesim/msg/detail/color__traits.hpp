@@ -1,0 +1,1 @@
+/mnt/c/projects/ros-te/ros-te/intro_ws2/build/turtlesim/rosidl_generator_cpp/turtlesim/msg/detail/color__traits.hpp

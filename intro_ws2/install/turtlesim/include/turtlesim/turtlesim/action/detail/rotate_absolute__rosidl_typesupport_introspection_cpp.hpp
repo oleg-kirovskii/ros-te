@@ -1,0 +1,1 @@
+/mnt/c/projects/ros-te/ros-te/intro_ws2/build/turtlesim/rosidl_typesupport_introspection_cpp/turtlesim/action/detail/rotate_absolute__rosidl_typesupport_introspection_cpp.hpp
