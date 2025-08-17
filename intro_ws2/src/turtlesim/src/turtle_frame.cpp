@@ -34,7 +34,7 @@
 #include <cstdlib>
 #include <ctime>
 
-#define DEFAULT_BG_R 0x45
+#define DEFAULT_BG_R 0x75
 #define DEFAULT_BG_G 0x56
 #define DEFAULT_BG_B 0xff
 
@@ -49,7 +49,7 @@ TurtleFrame::TurtleFrame(rclcpp::Node::SharedPtr& node_handle, QWidget* parent, 
 , id_counter_(0)
 {
   setFixedSize(500, 500);
-  setWindowTitle("TurtleSim");
+  setWindowTitle("MyTurtleSim");
 
   srand(time(NULL));
 
