@@ -13,13 +13,14 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='olegk',
-    maintainer_email='oleg.kirovskii@gmail.com',
+    maintainer='olegkirovskii',
+    maintainer_email='oleg.kirovskii@tii.ae',
     description='TODO: Package description',
-    license='Apache-2.0',
+    license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'border = move-turtle.border_watch:main',
         ],
     },
 )
