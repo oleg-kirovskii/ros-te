@@ -20,11 +20,8 @@ class SpeedCommander(Node):
     def listener_callback(self, msg):
         # Callback function that processes the time to collision and adjusts speed.
         speed = Twist()
-        if msg.data < 2.0:
-            speed.linear.x = 0.1  # Slow down if close to collision
-            speed.angular.z = 0.5  # Rotate to avoid collision
-        else:
-            speed.linear.x = 0.8  # Normal speed
+        if msg.data > 2.5:
+            speed.linear.x = 0.5  # Normal speed
             self.publisher_.publish(speed)
 
 def main(args=None):
