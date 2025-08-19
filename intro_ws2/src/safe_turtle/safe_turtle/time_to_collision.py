@@ -40,12 +40,13 @@ class TimeToCollision(Node):
             t_x = (X_MAX - msg.x) / abs(v_x)
         elif v_x < 0:   
             t_x = (msg.x - X_MIN) / abs(v_x)
+        else:
+            t_x=1000.0
         if v_y > 0:
             t_y = (Y_MAX - msg.y) / abs(v_y)
         elif v_y < 0:   
             t_y = (msg.y - Y_MIN) / abs(v_y)
         else:
-            t_x=1000.0
             t_y=1000.0
         return min(t_x, t_y)
 

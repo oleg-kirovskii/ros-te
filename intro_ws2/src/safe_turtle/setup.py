@@ -22,6 +22,7 @@ setup(
         'console_scripts': [
             'border = safe_turtle.border_watch:main',
             'ttc = safe_turtle.time_to_collision:main',
+            'speed = safe_turtle.speed_commander:main',
         ],
     },
 )
