@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'border = safe_turtle.border_watch:main'
+            'border = safe_turtle.border_watch:main',
+            'ttc = safe_turtle.time_to_collision:main',
         ],
     },
 )
