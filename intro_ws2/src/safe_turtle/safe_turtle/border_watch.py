@@ -3,17 +3,26 @@ from rclpy.node import Node
 import math
 
 from turtlesim.msg import Pose
-from safe_turtle.msg import ttc
+from std_msgs.msg import Float32
 from rclpy.action import ActionClient
 from turtlesim.action import RotateAbsolute
 
 class BorderWatch(Node):
+
+    heading = 0.0  # Initialize heading to 0 radians
+
     def __init__(self):
         super().__init__('border_watch')
         self.subscription = self.create_subscription(
-            ttc,
+            Float32,
             'time_to_collision',
-            self.listener_callback,
+            self.listener_ttc_callback,
+            10
+        )
+        self.subscription = self.create_subscription(
+            Pose,
+            '/turtle1/pose',
+            self.listener_pose_callback,
             10
         )
         self.subscription
@@ -28,15 +37,19 @@ class BorderWatch(Node):
         goal_msg.theta = angle
         self._action_client.wait_for_server()
         self._action_client.send_goal_async(goal_msg)
-        self.get_logger().info("Sent goal to rotate turtle to {angle} radians.")
-        
-    def listener_callback(self,msg):
+        # self.get_logger().info("Sent goal to rotate turtle to {angle} radians.")
+
+    def listener_pose_callback(self, msg):
+        # Callback function that processes the turtle's pose.
+        self.heading = msg.theta    
+    
+    def listener_ttc_callback(self,msg):
         # Callback function that processes the time to collision message.
-        ttc = msg.ttc
+        ttc = msg.data
         if ttc < 1.0:
             self.get_logger().info("Turtle is close to the border, rotating to avoid collision.")
             # Rotate the turtle to avoid collision with the border.
-            self.rotate_turtle(math.pi/2)  # Rotate 90 degrees to the right
+            self.rotate_turtle(self.heading+math.pi/4)  # Rotate 45 degrees to the right
         # else:
         #    self.get_logger().info("Turtle is safe from the border.")
 

@@ -54,7 +54,7 @@ class TimeToCollision(Node):
         ttc_value = self.time_to_collision(msg)
         
         ttc_msg = Float32()
-        ttc_msg.ttc = ttc_value
+        ttc_msg.data = ttc_value
         self.publisher_.publish(ttc_msg)
 
 def main(args=None):
