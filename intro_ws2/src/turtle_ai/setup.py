@@ -20,6 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'ttc = turtle_ai.ttc:main',
+            'tmove = turtle_ai.turtle_mover:main',
         ],
     },
 )
