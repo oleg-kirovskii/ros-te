@@ -24,7 +24,7 @@ class TimeToCollision(Node):
 
     def time_to_collision(self,msg):
         # Calculates the time to collision with the border of the turtlesim world.
-        # The world is a square with corners at (0,0), (10,0), (10,10), and (0,10).
+        # The world is a square with corners at (1,0), (10,0), (10,10), and (1,10).
         # The turtle's position is given by (msg.x, msg.y) and its orientation by msg.theta.
         # The turtle's linear velocity is given by msg.linear_velocity.
         # Returns the time to collision with the border.
@@ -32,8 +32,8 @@ class TimeToCollision(Node):
         PI = math.pi
         X_MAX = 10.0
         Y_MAX = 10.0
-        X_MIN = 0.0
-        Y_MIN = 0.0
+        X_MIN = 1.0
+        Y_MIN = 1.0
         v_x= msg.linear_velocity * math.cos(msg.theta)
         v_y= msg.linear_velocity * math.sin(msg.theta)
         if v_x > 0:

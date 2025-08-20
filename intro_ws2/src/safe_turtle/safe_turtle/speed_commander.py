@@ -20,9 +20,16 @@ class SpeedCommander(Node):
     def listener_callback(self, msg):
         # Callback function that processes the time to collision and adjusts speed.
         speed = Twist()
+
+        # self.get_logger().info("TTC: %f", msg.data)
+
         if msg.data > 2.5:
-            speed.linear.x = 0.5  # Normal speed
-            self.publisher_.publish(speed)
+            speed.linear.x = 1.0  # Normal speed
+        else:
+            speed.angular.z = 1.0
+            speed.linear.x = 0.25
+        
+        self.publisher_.publish(speed)
 
 def main(args=None):
     rclpy.init(args=args)

@@ -11,11 +11,6 @@ launch:
     pkg: "safe_turtle"
     exec: "ttc"
     name: "time_to_collision"
-  
-- node:
-    pkg: "safe_turtle"
-    exec: "border"
-    name: "border_watch"
 
 - node:
     pkg: "safe_turtle"
