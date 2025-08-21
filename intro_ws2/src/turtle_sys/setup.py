@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'safe_turtle'
+package_name = 'turtle_sys'
 
 setup(
     name=package_name,
@@ -10,19 +10,20 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name + '/launch',
+         ['launch/turtle_sys.launch.py']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='olegkirovskii',
+    maintainer='olegk',
     maintainer_email='oleg.kirovskii@tii.ae',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='A ROS2 package for turtle collision avoidance',
+    license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'border = safe_turtle.border_watch:main',
-            'ttc = safe_turtle.time_to_collision:main',
-            'speed = safe_turtle.speed_commander:main',
+            'speed = turtle_sys.velocity_controller:main',
+            'ttc = turtle_sys.time_to_collision:main',
         ],
     },
 )

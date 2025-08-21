@@ -1,0 +1,19 @@
+@startuml turtle_sys_component
+package turtlesim{
+  component turtlesim_node
+  interface "pose: Pose" as pose
+  interface "cmd_vel: Twist" as cmd_vel
+}
+package "turtle_sys"{
+  component time_to_collision
+  component velocity_controller
+  interface "ttc: Float32" as ttc
+}
+  cmd_vel->turtlesim_node
+  turtlesim_node->pose
+
+  pose->time_to_collision
+  time_to_collision->ttc
+  ttc->velocity_controller
+  velocity_controller->cmd_vel
+@enduml
