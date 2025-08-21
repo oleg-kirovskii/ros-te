@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'ttc = turtle_sys.time_to_collision:main',
         ],
     },
 )

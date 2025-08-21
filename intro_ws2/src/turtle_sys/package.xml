@@ -3,9 +3,14 @@
 <package format="3">
   <name>turtle_sys</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>A ROS2 package for turtle collision avoidance</description>
   <maintainer email="oleg.kirovskii@tii.ae">olegkirovskii</maintainer>
   <license>Apache-2.0</license>
+
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>turtlesim</depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
