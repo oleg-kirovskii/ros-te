@@ -1,0 +1,23 @@
+%YAML 1.2
+---
+launch:
+
+- node:
+    pkg: "turtlesim"
+    exec: "turtlesim_node"
+    name: "turtle1"
+
+- node:
+    pkg: "safe_turtle"
+    exec: "ttc"
+    name: "time_to_collision"
+  
+- node:
+    pkg: "safe_turtle"
+    exec: "border"
+    name: "border_watch"
+
+- node:
+    pkg: "safe_turtle"
+    exec: "speed"
+    name: "speed_commander" 
