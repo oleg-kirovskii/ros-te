@@ -1,0 +1,25 @@
+@startuml ros2_component_diagram_simple
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+
+package "turtlesim" {
+  component "turtlesim_node" as turtlesim_node
+  interface "/turtle1/pose: Pose" as pose_topic
+  interface "/turtle1/cmd_vel: Twist" as cmd_vel_topic
+}
+
+package "turtle_sys" {
+  component "time_to_collision" as ttc_node
+  component "velocity_controller" as velocity_controller
+  interface "ttc: Float32" as ttc_topic
+}
+
+' Core data flow for currently running system
+pose_topic --> ttc_node
+ttc_node --> ttc_topic
+ttc_topic --> velocity_controller
+velocity_controller --> cmd_vel_topic
+cmd_vel_topic --> turtlesim_node
+turtlesim_node --> pose_topic
+
+@enduml
